@@ -1,9 +1,10 @@
 import React from 'react';
-import Routes from './Routes';
+import Home from './pages/home';
+import "./global.css";
 
 function App() {
   return (
-    <App />
+    <Home />
   );
 }
 
