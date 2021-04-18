@@ -1,0 +1,7 @@
+- observar os prototipos e fazer semelhantes
+- estruturar o componente antes de desenvolver
+- Utilizar tags html5
+- se basear nos protipos
+- Instalar super scss
+- fazer boas transitions
+- arquitetura do projeto
