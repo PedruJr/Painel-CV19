@@ -5,3 +5,7 @@
 - Instalar super scss
 - fazer boas transitions
 - arquitetura do projeto
+
+-parte logica p/ preencher o componente
+useEffect vai puxar os dados da api e colocar em uma variavel
+dentro de uma variavel sera feito um tratamento para buscar apenas o solicitado entao realizado map buscando apenas o solicitado e preenchendo um array de 4 variaveis palhoça florianopolis, sj, biguaçu

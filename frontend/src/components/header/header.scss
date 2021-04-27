@@ -30,20 +30,20 @@ header img {
 }
 
 .navMenu {
-    width: 70%;
-    height: 110em;
+    width: 0;
+    height: 50em;
     background-color: lightgray;
     border-left: 1px solid white;
     position: absolute;
     right: 0px;
-    z-index: 0;
+    z-index: 9999;
     transition: 0.5s;
+    overflow: hidden;
 }
 
 
-.navMenu-hidden{
-    width: 0px;
-    overflow: hidden;
+.navMenu-show{
+    width: 70%;
 }
 
 .linkTo {

@@ -18,7 +18,7 @@ export default function Header() {
                    <img src="https://media2.giphy.com/media/efdPsC5zF28Lu/giphy.gif"></img>
                 </div>
 
-                <div className={`navMenu ${navbarOn ? "navMenu-hidden" : "false"}`}>
+                <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
 
                     <div className="circular-img nav-img">
                       <img src="https://media2.giphy.com/media/efdPsC5zF28Lu/giphy.gif"></img>
