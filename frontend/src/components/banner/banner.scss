@@ -1,4 +1,5 @@
 .banner-hero {
+    margin:-1.5em auto;
     height: 25em;
     background-color: red;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/ponte.jpg");
@@ -7,16 +8,26 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-    box-shadow: 5px 5px 10px black;
+    box-shadow: 5px 8px 10px black;
+    margin-bottom: 1em;
 }
 .banner-text {
     font-size: 1.5em;
     width: 15em;
     position: relative;
     top: 80%;
-    left: 50%;
+    left: 60%;
+    text-align: left;
     transform: translate(-60%, -100%);
     color: white;
+}
+
+.banner-text h1 {
+    line-height: 0.9em;
+    position: relative;
+    left: -5%;
+    margin-bottom: 0.2em;
+
 }
 
 .banner-text button {
