@@ -2,6 +2,13 @@ drop database if exists painel-cv19;
 create database painel-cv19;
 use painel-cv19; 
 
+CREATE TABLE `painel-cv19`.`cidade` (
+  `idcidade` INT NOT NULL AUTO_INCREMENT,
+  `city_ibge_code` INT NULL,
+  `city` VARCHAR(45) NULL,
+  PRIMARY KEY (`idcidade`));
+
+
 CREATE TABLE `painel-cv19`.`dados` (
   `cd_dado` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   `city_ibge` INT NULL,
@@ -20,14 +27,10 @@ CREATE TABLE `painel-cv19`.`dados` (
   `new_confirmed` VARCHAR(45) NULL,
   `new_deaths` VARCHAR(45) NULL,
   ` order_for_place` VARCHAR(45) NULL,
-  PRIMARY KEY (`cd_dado`));
+  PRIMARY KEY (`cd_dado`))
+  FOREIGN KEY (city_ibge_code) REFERENCES cidade(city_ibge_code);
 
 
-CREATE TABLE `painel-cv19`.`cidade` (
-  `idcidade` INT NOT NULL AUTO_INCREMENT,
-  `city_ibge_code` INT NULL,
-  `city` VARCHAR(45) NULL,
-  PRIMARY KEY (`idcidade`));
 
 
 INSERT INTO `painel-cv19`.`cidade` (`idcidade`, `city_ibge_code`, `city`) VALUES ('1', '4211900', 'Palhoça');

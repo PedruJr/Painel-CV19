@@ -74,7 +74,6 @@ export default function Map() {
 
 
 
-
     return (
         <div className="container">
             <h1>Mapa Informativo</h1>
