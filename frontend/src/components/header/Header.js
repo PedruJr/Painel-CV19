@@ -8,7 +8,6 @@ export default function Header() {
     function toggleNavbar() {
         setNavbarOn(!navbarOn)
     }
-    
     return (
         <div>
             <header>
