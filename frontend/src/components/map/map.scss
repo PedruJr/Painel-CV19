@@ -4,19 +4,20 @@
     margin: 1em;
     background-color: white;
     box-shadow: 5px 5px 10px black;
-    border: 2px solid black;
-    border: 20px;
+    border: 3px solid gray;
+    border-radius: 20px;
+
 }
 
-.infosCard{
-    width: 50%;
-    background-color: white;
-    border: 1px solid lightgray;
-}
-
-.infosCard-text {
-    padding: 1em;
-}
+h1{
+    text-align: center;
+    margin-top: 0.5em;
+    }
+    
+hr{
+        width: 80%;
+        margin:0 auto;
+    }
 
 .map-container {
     background-image: url("../../assets/mapa0.png");
@@ -26,71 +27,83 @@
     position: relative;
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
-    background-position: 0.9em -0.4em;
-    background-size: 102%;
+    background-position: 0.9em -0.1em;
+    background-size: 100%;
+    
 }
-
-
 
 .map-container img {
     width: 100%;
+    margin-left: 1em;
+    position: relative;
 }
 
 //* buttons position
+#biguaçu-btn, #floripa-btn, #palhoça-btn, #saoJose-btn,#hidePainel-btn
+{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    animation: none;
+}
 
 #biguaçu-btn {
     width: 40%;
     height: 28%;
-    position: absolute;
     top: 1em;
     left: 2em;
-    opacity: 0;
-
 }
-
 
 #floripa-btn {
     width: 35%;
-    height: 65%;
-    position: absolute;
+    height: 74%;
     top: 3em;
-    right: 1em;
-    opacity: 0;
-
+    right: 1.5em;
 }
-
 
 #palhoça-btn {
     width: 32%;
-    height: 47%;
-    position: absolute;
+    height: 45%;
     bottom: 0.5em;
     left: 4em;
-    opacity: 0;
-
 }
 
 #saoJose-btn {
     width: 35%;
-    height: 18%;
-    position: absolute;
-    top: 8em;
+    height: 16%;
+    top: 8.7em;
     left: 4em;
-    opacity: 0;
 }
 
+#hidePainel-btn{
+    width: 20%;
+    height: 64%;
 
-h1{
-text-align: center;
-margin-top: 0.5em;
+    top: 2.2em;
+    right: 0em;
+    z-index: 9999;
+
+    opacity: 1;
 }
 
-hr{
-    width: 80%;
-    margin:0 auto;
+.infosCard{
+    width: 0%;
+    max-height: 65%;
+    margin-left: -10em;
+    background-color: white;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: 3em;
+    left: 0em;
+    overflow: hidden;
+    transition: 1s;
 }
 
-.map-img {
-    margin-left: 1em;
-    position: relative;
+.infosCard-show{
+    width: 100%;
+    margin-left: 0em;
+}
+
+.infosCard-text {
+    padding: 1em;
 }

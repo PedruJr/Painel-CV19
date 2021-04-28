@@ -17,6 +17,7 @@ export default function Map() {
     const [saoJose, setSaoJose] = useState('');
     const [floripa, setFloripa] = useState('');
     const [currentCity, setCurrentCity] = useState('');
+    const [show, setShow] = useState('infosCard-text');
     
     const data = {
         biguaçu,
@@ -53,15 +54,19 @@ export default function Map() {
         switch(value){
             case "biguaçu":
                 setCurrentCity(biguaçu);
+                setShow("infosCard-show");
                 break;
             case "floripa":
                 setCurrentCity(floripa);
+                setShow("infosCard-show");
                 break;
             case "palhoça":
                 setCurrentCity(palhoça);
+                setShow("infosCard-show");
                 break;
             case "saoJose":
                 setCurrentCity(saoJose);
+                setShow("infosCard-show");
                 break;
         }
 
@@ -76,31 +81,31 @@ export default function Map() {
             <hr></hr>
             <div className="map-container">
                 <img className="map-img" src={ponte} alt="logo"/>
+
                 <button type="submit" id="biguaçu-btn" onClick={()=> setCity("biguaçu")}>Biguaçu</button>
                 <button type="submit" id="floripa-btn" onClick={()=> setCity("floripa")}>Florianopolis</button>
                 <button type="submit" id="palhoça-btn" onClick={()=> setCity("palhoça")}>Palhoça</button>
                 <button type="submit" id="saoJose-btn" onClick={()=> setCity("saoJose")}>São Jose</button>
+          
+           <div className={`infosCard ${show}`}>
+                        <h3>Cidade:</h3>
+                        <p>{currentCity.city}</p>
+                        <h3>Data</h3>
+                        <p>{currentCity.date}</p>
+                        <h3>População estimada:</h3>
+                        <p>{currentCity.estimated_population}</p>
+                        <h3>Casos confirmados:</h3>
+                        <p>{currentCity.last_available_confirmed}</p>
+                        <h3>Taxa de mortalidade:</h3>
+                        <p>{currentCity.last_available_death_rate}</p>
+                        <h3>Ultimas mortes:</h3>
+                        <p>{currentCity.last_available_deaths}</p>
+                        <h3>Novos confirmados:</h3>
+                        <p>{currentCity.new_confirmed}</p>
+                        <h3>Novas mortes:</h3>
+                        <p>{currentCity.new_deaths}</p>
+                        <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}></button>
             </div>
-            <div className="infosCard">
-                <div className="infosCard-text">
-                    <h3>Cidade:</h3>
-                    <p>{currentCity.city}</p>
-                    <h3>Data</h3>
-                    <p>{currentCity.date}</p>
-                    <h3>População estimada:</h3>
-                    <p>{currentCity.estimated_population}</p>
-                    <h3>Casos confirmados:</h3>
-                    <p>{currentCity.last_available_confirmed}</p>
-                    <h3>Taxa de mortalidade:</h3>
-                    <p>{currentCity.last_available_death_rate}</p>
-                    <h3>Ultimas mortes:</h3>
-                    <p>{currentCity.last_available_deaths}</p>
-                    <h3>Novos confirmados:</h3>
-                    <p>{currentCity.new_confirmed}</p>
-                    <h3>Novas mortes:</h3>
-                    <p>{currentCity.new_deaths}</p>
-                    <button type="submit" value="biguaçu" onClick={()=> setCity("biguaçu")}>Change City</button>
-                </div>
             </div>
         </div>
     )
