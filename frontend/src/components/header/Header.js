@@ -6,7 +6,7 @@ export default function Header() {
     const [navbarOn, setNavbarOn] = useState(false);
     
     function toggleNavbar() {
-        setNavbarOn(!navbarOn);
+        setNavbarOn(!navbarOn)
     }
     
     return (
@@ -14,20 +14,10 @@ export default function Header() {
             <header>
                 <FiMenu onClick={toggleNavbar} className="icon" />
 
-                <div  className="circular-img">
-                   <img src="https://media2.giphy.com/media/efdPsC5zF28Lu/giphy.gif"></img>
-                </div>
-
                 <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
 
-                    <div className="circular-img nav-img">
-                      <img src="https://media2.giphy.com/media/efdPsC5zF28Lu/giphy.gif"></img>
-                    </div>
-
                     <button className="linkTo"><FiHome></FiHome>Index</button>
-                    <button className="linkTo">Index</button>
-                    <button className="linkTo">Index</button>
-                    <button className="linkTo">Index</button>
+                    <button className="linkTo">Gerar Relatório</button>
                 </div>
             </header>
         </div>

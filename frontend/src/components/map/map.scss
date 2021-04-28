@@ -1,7 +1,7 @@
 .container{
-    width: 90%;
+    width: 100%;
     padding-top: 0.5em ;
-    margin: 1em;
+    float: left;
     background-color: white;
     box-shadow: 5px 5px 10px black;
     border: 2px solid black;
@@ -12,6 +12,8 @@
     width: 50%;
     background-color: white;
     border: 1px solid lightgray;
+
+
 }
 
 .infosCard-text {
@@ -20,14 +22,14 @@
 
 .map-container {
     background-image: url("../../assets/mapa0.png");
-    margin-top: 1em;
-    width: 100%;
-    height: 100%;
+    margin-top: 2em;
+    width: 50%;
+    height: 50%;
     position: relative;
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
-    background-position: 0.9em -0.4em;
-    background-size: 102%;
+    background-position: 0.82em -0.4em;
+    background-size: 101%;
 }
 
 
