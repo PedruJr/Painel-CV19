@@ -1,0 +1,14 @@
+.aboutus-container {
+    margin:1em auto;
+
+    display: flex;
+    align-items: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.aboutus-hidden {
+    padding-top: 1em;
+
+}

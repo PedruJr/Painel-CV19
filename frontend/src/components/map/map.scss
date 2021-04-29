@@ -1,9 +1,8 @@
 .container{
     width: 100%;
-    padding-top: 0.5em ;
+    padding-top: 1em ;
     background-color: white;
     box-shadow: 5px 5px 10px black;
-    border-top: 3px solid gray;
     border-bottom: 3px solid gray;
 
 }
@@ -17,6 +16,10 @@ hr{
         width: 80%;
         margin:0 auto;
     }
+
+p{
+    margin:1em 2em;
+}
 
 .map-container {
     background-image: url("../../assets/mapa0.png");
@@ -71,7 +74,7 @@ hr{
 #saoJose-btn {
     width: 35%;
     height: 16%;
-    top: 8.7em;
+    top: 9.2em;
     left: 4em;
 }
 
@@ -84,6 +87,10 @@ hr{
     z-index: 9999;
 
     opacity: 1;
+}
+
+#showmap-btn{
+    margin: 1em 7em;
 }
 
 .infosCard{

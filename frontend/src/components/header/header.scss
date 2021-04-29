@@ -5,23 +5,9 @@ header {
     border-bottom: 1px solid lightgray;
     display: flex;
     flex-wrap: wrap;
-}
-
-.circular-img {
-    margin:0 5em ;
-    max-width: 10em;
-    max-height: 130px;
-    overflow: hidden;
-    border-radius: 50%;
-}
-
-.nav-img {
-    margin: 1em 5em;
-}
-
-header img {
-    width: 300px;
-    margin-left: -80px;
+    position: relative;
+    z-index: 100;
+    box-shadow: 2px 2px 8px black;
 }
 
 .icon {

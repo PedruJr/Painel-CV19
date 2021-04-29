@@ -77,6 +77,13 @@ export default function Map() {
     return (
         <div className="container">
             <h1>Mapa Informativo</h1>
+            <p>O mapa oferece informações vindas diretamente das atualizações
+                feitas pelas secretarias da saude respectivas de cada cidade,
+                voce pode acompanhalas para se precaver e avisar as pessoas
+                da situação!
+            </p>
+            <button type="submit" id="showmap-btn" onClick={()=> setShow(" ")}> Ver mapa... </button>
+
             <hr></hr>
             <div className="map-container">
                 <img className="map-img" src={ponte} alt="logo"/>

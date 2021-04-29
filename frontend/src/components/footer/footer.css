@@ -2,4 +2,13 @@
     width: 100%;
     height: 4em;
     background-color: gray;
+
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.footer-content p{
+    margin: 1.5em;
 }

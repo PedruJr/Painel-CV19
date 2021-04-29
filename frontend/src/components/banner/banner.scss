@@ -1,38 +1,57 @@
 .banner-hero {
-    margin:-1.5em auto;
+    position: relative;
     height: 25em;
     background-color: red;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../../assets/ponte.jpg");
-
+    margin-top: -1.5em;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     box-shadow: 5px 8px 10px black;
-    margin-bottom: 1em;
+    z-index: 50;
 }
+
 .banner-text {
     font-size: 1.5em;
-    width: 15em;
+    width: 100%;
+
     position: relative;
-    top: 80%;
-    left: 60%;
+    top: 95%;
+    left: 57%;
+
     text-align: left;
     transform: translate(-60%, -100%);
     color: white;
 }
 
 .banner-text h1 {
-    line-height: 0.9em;
-    position: relative;
-    left: -5%;
-    margin-bottom: 0.2em;
+    max-width: 7em;
+    font-size: 1.5em;
+    text-align: left;
+    line-height: 1.1em;
 
+    position: relative;
+    left: 10%;
 }
+
 
 .banner-text button {
     width: 15em;
     color: black;
-    margin: 1em 0 -1em 1.5em;
+    margin: 0em 5em 1em 3em;
 }
 
+.circular-container {
+    position: absolute;
+    top: -0.3em;
+    right: 2.5em;
+    max-width: 4em;
+    max-height: 80px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.logo-img {
+    margin-left: -80px;
+}
