@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/db.js"
+    "start": "nodemon src/api.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +12,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "mongodb": "^3.6.9",
     "mysql2": "^2.2.5",
     "node-fetch": "^2.6.1",
     "node-modules": "^1.0.1",
