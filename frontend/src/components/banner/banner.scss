@@ -35,13 +35,6 @@
     left: 10%;
 }
 
-
-.banner-text button {
-    width: 15em;
-    color: black;
-    margin: 0em 5em 1em 3em;
-}
-
 .circular-container {
     position: absolute;
     top: -0.3em;
@@ -54,4 +47,24 @@
 
 .logo-img {
     margin-left: -80px;
+}
+
+@media (min-width: 750px) {
+    .banner-text {
+        top: 55%;
+        left: 45%;
+        max-width: 600px;
+    }
+
+    .banner-text p{
+        position: absolute;
+    }
+
+    .banner-text h1 {
+        left: 7%;
+    }
+
+    .circular-container {
+    display: none;
+    }
 }

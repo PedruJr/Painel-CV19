@@ -1,18 +1,21 @@
 header {
     width: 100%;
     height: 4em;
-    background-color: white;
-    border-bottom: 1px solid lightgray;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     position: relative;
     z-index: 100;
     box-shadow: 2px 2px 8px black;
 }
 
+header p {
+    padding-top: 0.3em;
+}
+
 .icon {
     margin: 0.03em;
-    font-size: 3.8em;
+    font-size: 3em;
+    color: gray;
 }
 
 .navMenu {

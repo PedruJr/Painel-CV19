@@ -3,9 +3,9 @@ import './footer.css'
 
 export default function footer() {
     return (
-        <div className="footer-container">
+        <div className="footer-container main-color">
             <div className="footer-content">
-                <p> Footer works!</p>
+                <p> SENAC - ADS 2019/1 ®</p>
             </div>
         </div>
     )

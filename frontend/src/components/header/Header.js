@@ -10,14 +10,21 @@ export default function Header() {
     }
     return (
         <div>
-            <header>
+            <header className="main-color">
                 <FiMenu onClick={toggleNavbar} className="icon" />
 
-                <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
+                <div className="flex">
+                    <p>Mapa</p>
+                    <p>Sobre o portal</p>
+                    <p>Contato</p>
+                    <p>Contato</p>
+                </div>
 
+                <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
                     <button className="linkTo"><FiHome></FiHome>Index</button>
                     <button className="linkTo">Gerar Relatório</button>
                 </div>
+
             </header>
         </div>
     )

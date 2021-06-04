@@ -1,7 +1,7 @@
 .footer-container{
     width: 100%;
     height: 4em;
-    background-color: gray;
+
 
     display: flex;
     align-items: center;
@@ -11,4 +11,5 @@
 
 .footer-content p{
     margin: 1.5em;
+    font-weight: bold;
 }

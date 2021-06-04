@@ -11,11 +11,9 @@ export default function Banner() {
                     <h1>Movimento contra Covid!</h1>
                     <p> 
                         Com o proposito de manter a população da região metropolitada
-                        antenada de maneira dinamica sobre o covid em suas cidades!
+                        antenada de maneira dinamica sobre o Covid-19 em suas cidades!
+
                     </p>
-                    <button >
-                        Saiba mais...
-                    </button>
                 </div>
             </div>
     )
