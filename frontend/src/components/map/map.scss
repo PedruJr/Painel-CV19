@@ -47,7 +47,6 @@ p{
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 
-
     background-position: 0.90em -0.1em;
     background-size: 100%;
     transition: 0.5s;
@@ -65,40 +64,55 @@ p{
 }
 
 //* buttons position
-#biguaçu-btn, #floripa-btn, #palhoça-btn, #saoJose-btn,#hidePainel-btn
+#biguacu-btn, #floripa-btn, #palhoca-btn, #saoJose-btn,#hidePainel-btn
 {
     position: absolute;
-    opacity: 0;
     cursor: pointer;
     animation: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: 0px;
+    opacity: 0%;
+    transition: 0.5s;
+    z-index: 0;
 }
 
-#biguaçu-btn {
-    width: 40%;
-    height: 28%;
-    top: 1em;
-    left: 2em;
+#biguacu-btn {
+    width: 53%;
+    height: 38%;
+    top: 0em;
+    left: 0.8em;
+    background-image: url("../../assets/biguacu0.png");
+}
+
+#biguacu-btn:hover, #palhoca-btn:hover, #saoJose-btn:hover, #floripa-btn:hover {
+    opacity: 100%;
 }
 
 #floripa-btn {
-    width: 35%;
-    height: 74%;
-    top: 3em;
-    right: 1.5em;
+    width: 54%;
+    height: 80%;
+    top: 4em;
+    right: -1.1em;
+    background-image: url("../../assets/floripa0.png");
 }
 
-#palhoça-btn {
-    width: 32%;
-    height: 45%;
-    bottom: 0.5em;
-    left: 4em;
+#palhoca-btn {
+    width: 40%;
+    height: 55%;
+    bottom: -0.8em;
+    left: 6em;
+    background-image: url("../../assets/palhoca0.png");
 }
 
 #saoJose-btn {
-    width: 35%;
-    height: 16%;
-    top: 9.2em;
-    left: 4em;
+    width: 32%;
+    height: 21%;
+    top: 15em;
+    left: 6.5em;
+    background-image: url("../../assets/saojose0.png");
+    z-index: 1;
 }
 
 #hidePainel-btn{
@@ -129,6 +143,7 @@ p{
     display: block;
     width: 100%;
     margin-left: 0em;
+    z-index: 3;
 }
 
 .infosCard-text {
