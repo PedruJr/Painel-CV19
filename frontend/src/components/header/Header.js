@@ -10,19 +10,20 @@ export default function Header() {
     }
     return (
         <div>
-            <header className="main-color">
+            <header>
                 <FiMenu onClick={toggleNavbar} className="icon" />
 
-                <div className="flex">
-                    <p>Mapa</p>
-                    <p>Sobre o portal</p>
-                    <p>Contato</p>
-                    <p>Contato</p>
+                <div className="flex links">
+                    <p onClick={() => window.location.replace("/#map")} >Mapa</p>
+                    <p onClick={() => window.location.replace("/#about")} >Sobre o portal</p>
+                    <p onClick={() => window.location.replace("/#cares")} >Cuidados</p>
+                    <p onClick={() => window.location.replace("/#vacines")} >Datas vacinas</p>
+                    <p onClick={() => window.location.replace("/#contactus")} >Contato</p>
                 </div>
 
                 <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
-                    <button className="linkTo"><FiHome></FiHome>Index</button>
-                    <button className="linkTo">Gerar Relatório</button>
+                    <button className="btn-menu"><FiHome></FiHome>Index</button>
+                    <button className="btn-menu">Gerar Relatório</button>
                 </div>
 
             </header>

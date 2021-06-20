@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './map.scss';
 import ponte from '../../assets/mapa0.png';
 import {FiMap} from "react-icons/fi";
+import {IoArrowBackCircle, IoArrowDownCircleSharp, IoSkull} from "react-icons/io5";
 
 export default function Map() {
     const fetch = require('node-fetch');
@@ -75,8 +76,49 @@ export default function Map() {
 
     }
 
+    function CardValues(props){
+        return(
+            <div className="cardValues-box">
+                <span>{props.title}</span>
+                <h3>{props.info}</h3>
+            </div>
+        )
+    }
+
+    function CardPercentages(props) {
+
+        return (
+            <div>
+                <span>{props.title}</span>
+                <IoSkull></IoSkull>
+                <h3>%{props.value}</h3>
+            </div>
+        )
+    }
+
+    function RenderCard(props) {
+        return(
+            <div className="rendercard-container">
+                <h3>{props.city}</h3>
+                <div className="rendercard-row1">
+                    <CardValues title="Casos confirmados" info={currentCity.last_available_confirmed}></CardValues>
+                    <CardValues title="Casos recentes" info={currentCity.new_confirmed}></CardValues>
+                    <CardValues title="Mortes confirmadas" info={currentCity.last_available_deaths}></CardValues>
+                </div>
+                
+                <div className="rendercard-row2" >
+                    <CardPercentages title="Taxa de mortalidade" value={currentCity.last_available_deaths}></CardPercentages>
+                </div>
+
+                <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}><IoArrowBackCircle ></IoArrowBackCircle></button>
+
+            </div>
+        )
+    }
+
+
     return (
-        <div className="container main-background">
+        <div id="map" className="container main-background">
             <div className="map-content">
 
                 <div >
@@ -87,11 +129,14 @@ export default function Map() {
                     </h1>
                 </div>
 
-                <p>Em um click em sua cidade o mapa apresentara dados vindos diretamente da secretaria de saude regional,
-                    assim voce se mantem antenado e informa a populaçao local sobre nossa atual situaçao,
-                    podendo evitar possiveis riscos ou informaçoes falsas!
+                <p>
+                    Clique em sua cidade no mapa e se antene sobre a situação do covid em sua cidade!
                 </p>
-                <button type="submit" id="showmap-btn" onClick={()=> setShowMap(!showMap)}> Ver mapa... </button>
+                <h3>Mostrar mapa</h3>
+
+                <button type="submit" id="showmap-btn" onClick={()=> setShowMap(!showMap)}>
+                    <IoArrowDownCircleSharp></IoArrowDownCircleSharp>
+                </button>
 
                 <hr></hr>
                 <div className={`map-container ${showMap ? 'showMap' : ''}`}>
@@ -103,8 +148,20 @@ export default function Map() {
                     <button type="submit" id="saoJose-btn" onClick={()=> setCity("saoJose")}>São Jose</button>
 
                     <div className={`infosCard ${show}`}>
-                        <h3>Cidade:</h3>
-                        <p>{currentCity.city}</p>
+                        <RenderCard city={currentCity.city}></RenderCard>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    )
+}
+
+/*
+
+<h2>{currentCity.city}</h2>
+
+
                         <h3>Data</h3>
                         <p>{currentCity.date}</p>
                         <h3>População estimada:</h3>
@@ -120,9 +177,5 @@ export default function Map() {
                         <h3>Novas mortes:</h3>
                         <p>{currentCity.new_deaths}</p>
                         <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    )
-}
+                    
+ */

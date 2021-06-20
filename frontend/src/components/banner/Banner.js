@@ -1,18 +1,16 @@
 import React from 'react';
 import './banner.scss';
+import Header from '../header/Header'
 
 export default function Banner() {
     return (
             <div className="banner-hero">
+                <Header></Header>
                 <div className="banner-text">
-                    <div className="circular-container">
-                        <img className="logo-img" src="https://i.pinimg.com/originals/b7/82/87/b782875028b5c05ea5bef98c21482355.gif" alt="logo"/>
-                    </div>
                     <h1>Movimento contra Covid!</h1>
                     <p> 
                         Com o proposito de manter a população da região metropolitada
                         antenada de maneira dinamica sobre o Covid-19 em suas cidades!
-
                     </p>
                 </div>
             </div>

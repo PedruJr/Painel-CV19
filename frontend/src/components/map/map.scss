@@ -10,7 +10,7 @@
 .map-content{
     margin: 2em auto;
 
-    background-color: lightgray;
+    background-color: rgba(211, 211, 211, 0.596);
     width: 95%;
     border-radius: 8px;
 
@@ -18,24 +18,33 @@
     flex-direction: column;
     align-items: center;
     align-content: center;
+    overflow: hidden;
 }
 
-h1{
+.map-content h1{
     text-align: center;
     margin-top: 0.5em;
 }
 
-hr{
+.map-content hr{
     width: 80%;
     margin:0 auto;
 }
 
-p{
+.map-content p{
     margin:1em 2em;
 }
 
 #showmap-btn{
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
+    background-color: transparent;
+    font-size: 3em;
+    transition: 0.5s;
+}
+
+#showmap-btn:hover, #showmap-btn:active{
+    font-size: 3.5em;
+    color: #0bacee;
 }
 
 .map-container {
@@ -47,9 +56,11 @@ p{
     background-repeat: no-repeat; /* Do not repeat the image */
     background-size: cover;
 
-    background-position: 0.90em -0.1em;
+    background-position: 0.90em -0.0em;
     background-size: 100%;
     transition: 0.5s;
+    font-family: 'Livvic', sans-serif;
+    overflow: hidden;
 }
 
 .showMap{
@@ -73,71 +84,103 @@ p{
     background-size: contain;
     background-color: transparent;
     border: 0px;
-    opacity: 0%;
     transition: 0.5s;
     z-index: 0;
+    font-size: 2em;
+    color: transparent;
 }
 
 #biguacu-btn {
     width: 53%;
     height: 38%;
-    top: 0em;
-    left: 0.8em;
-    background-image: url("../../assets/biguacu0.png");
+    top: -0.2em;
+    left: 0.4em;
+
 }
 
-#biguacu-btn:hover, #palhoca-btn:hover, #saoJose-btn:hover, #floripa-btn:hover {
-    opacity: 100%;
+#biguacu-btn:hover, #biguacu-btn:active {
+    background-image: url("../../assets/biguacu0.png");
 }
 
 #floripa-btn {
     width: 54%;
     height: 80%;
-    top: 4em;
-    right: -1.1em;
+    top: 1.6em;
+    right: -0.7em;
+
+}
+
+#floripa-btn:hover, #floripa-btn:active {
     background-image: url("../../assets/floripa0.png");
 }
+
 
 #palhoca-btn {
     width: 40%;
     height: 55%;
-    bottom: -0.8em;
-    left: 6em;
+    bottom: -0.3em;
+    left: 2.7em;
+
+}
+
+#palhoca-btn:hover, #palhoca-btn:active {
     background-image: url("../../assets/palhoca0.png");
+
 }
 
 #saoJose-btn {
     width: 32%;
     height: 21%;
-    top: 15em;
-    left: 6.5em;
-    background-image: url("../../assets/saojose0.png");
+    top: 5.8em;
+    left: 2.8em;
     z-index: 1;
+
+}
+
+#saoJose-btn:hover, #saoJose-btn:active {
+    background-image: url("../../assets/saojose0.png");
 }
 
 #hidePainel-btn{
-    width: 20%;
-    height: 64%;
+    width: 1.3em;
 
-    top: 2.2em;
-    right: 0em;
+    top: 0.2em;
+    right: 0.2em;
     z-index: 9999;
-
-    opacity: 1;
+    opacity: 100%;
+    color: #0bacee;
+    font-size: 2.5em;
 }
 
 .infosCard{
     width: 0%;
-    max-height: 65%;
+    height: 200px;
     margin-left: -50em;
-    background-color: white;
-    border: 1px solid lightgray;
+    background-color: rgba(238, 238, 238, 0.911);
+    border: 5px solid lightgray;
     position: absolute;
     top: 3em;
     left: 0em;
     overflow: hidden;
     transition: 1s;
+    padding: 1em;
+    border-radius: 10px;
 }
+
+.rendercard-container h3{
+    color: #0bacee;
+}
+
+.cardValues-box{
+    width: 70px;
+}
+
+.rendercard-row1, .rendercard-row2 {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+
 
 .infosCard-show{
     display: block;
