@@ -90,8 +90,10 @@ export default function Map() {
         return (
             <div>
                 <span>{props.title}</span>
-                <IoSkull></IoSkull>
-                <h3>%{props.value}</h3>
+                <h3>
+                    <IoSkull size={35} style={{color: 'black'}}></IoSkull>
+                    %{props.value}
+                </h3>
             </div>
         )
     }

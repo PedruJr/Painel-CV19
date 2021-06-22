@@ -15,7 +15,7 @@
     font-size: 1.5em;
     text-align: left;
     color: white;
-
+    margin-left: 1em;
 }
 
 .banner-text h1 {
@@ -23,9 +23,13 @@
     font-size: 1.5em;
     text-align: left;
     line-height: 1.1em;
-
     position: relative;
-    left: 10%;
+    margin-bottom: 1em;
+    margin-top: -0.4em;
+}
+
+.banner-text p {
+    font-weight: bold;
 }
 
 @media (min-width: 750px) {

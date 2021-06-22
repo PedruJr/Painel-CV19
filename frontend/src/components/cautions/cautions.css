@@ -1,0 +1,33 @@
+.cautions-container{
+    text-align: center;
+    background-color: white;
+}
+
+.cautions-content{
+    padding:1em
+}
+
+.cautions-content h2{
+    padding-top: 2em;
+}
+
+.cautions-content h3{
+    line-height: 0.1;
+}
+
+.cautions-content b{
+    color: #0bacee;
+}
+
+.render-container {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1em;
+
+}
+
+.render-container img{
+    max-width: 300px;
+}
