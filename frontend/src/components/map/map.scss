@@ -1,24 +1,18 @@
-.container{
-    width: 100%;
-    padding-top: 1em ;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .map-content{
     margin: 2em auto;
 
     background-color: rgba(255, 255, 255, 0.600);
     width: 95%;
-    border-radius: 8px;
+    border-radius: 8px 8px 0px 0px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     overflow: hidden;
+    text-align: center;
+    border-bottom: 2px solid #0bacee;
+
 }
 
 .map-content h1{
@@ -26,13 +20,13 @@
     margin-top: 0.5em;
 }
 
-.map-content hr{
-    width: 80%;
-    margin:0 auto;
-}
-
 .map-content p{
     margin:1em 2em;
+    font-size: 1.1em;
+}
+
+.map-content b{
+    color: #0bacee;
 }
 
 #showmap-btn{
@@ -49,31 +43,31 @@
 }
 
 .map-container {
-    background-image: url("../../assets/mapa0.png");
     margin-top: 2em;
     width: 0%;
     height: 0%;
     position: relative;
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover;
-
-    background-position: 0.90em -0.0em;
-    background-size: 100%;
-    transition: 0.5s;
     font-family: 'Livvic', sans-serif;
     overflow: hidden;
-}
+    transition: 0.5s;
 
-.showMap{
-    height: 100%;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
 }
 
 .map-container img {
-    width: 100%;
-    margin-left: 1em;
-    position: relative;
+    max-width: 100%;
 }
+
+.showMap{
+    height: 520px;
+    width: 100%;
+}
+
+
 
 //* buttons position
 #biguacu-btn, #floripa-btn, #palhoca-btn, #saoJose-btn,#hidePainel-btn
@@ -192,4 +186,21 @@
 
 .infosCard-text {
     padding: 1em;
+}
+
+@media (min-width: 750px) {
+
+    .map-content {
+        background-color: rgba(255, 255, 255, 0.800);
+        width: 40%;
+    }
+
+    #showmap-btn{
+        margin-bottom: 0;
+    }
+
+    .map-container img {
+        max-width: 70%;
+    }
+
 }

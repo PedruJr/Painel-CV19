@@ -1,15 +1,17 @@
 .footer-container{
     width: 100%;
-    height: 4em;
+    height: 1em;
+}
 
-
-    display: flex;
-    align-items: center;
-    align-content: center;
-    flex-direction: column;
+.footer-content{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin:1em 0;
 }
 
 .footer-content p{
-    margin: 1.5em;
     font-weight: bold;
 }

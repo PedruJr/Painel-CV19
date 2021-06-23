@@ -8,7 +8,7 @@
 }
 
 .cautions-content h2{
-    padding-top: 2em;
+    padding-top: 1em;
 }
 
 .cautions-content h3{
@@ -30,4 +30,18 @@
 
 .render-container img{
     max-width: 300px;
+}
+
+
+@media (min-width: 750px) {
+
+    .cautions-content div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .render-container img{
+        max-width: 16em;
+    }
 }

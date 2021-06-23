@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import './header.scss';
-import {FiMenu,FiHome} from 'react-icons/fi';
+import {FiMenu} from 'react-icons/fi';
 
 export default function Header() {
     const [navbarOn, setNavbarOn] = useState(false);
@@ -15,14 +15,14 @@ export default function Header() {
 
                 <div className="flex links">
                     <p onClick={() => window.location.replace("/#map")} >Mapa</p>
-                    <p onClick={() => window.location.replace("/#about")} >Sobre o portal</p>
-                    <p onClick={() => window.location.replace("/#cares")} >Cuidados</p>
+                    <p onClick={() => window.location.replace("/#cautions")} >Cuidados</p>
+                    <p onClick={() => window.location.replace("/#aboutus")}> Sobre o portal</p>
                     <p onClick={() => window.location.replace("/#vacines")} >Datas vacinas</p>
                     <p onClick={() => window.location.replace("/#contactus")} >Contato</p>
                 </div>
 
                 <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
-                    <button className="btn-menu"><FiHome></FiHome>Index</button>
+                    <button className="btn-menu">Index</button>
                     <button className="btn-menu">Gerar Relatório</button>
                 </div>
 

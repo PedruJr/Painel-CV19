@@ -120,7 +120,7 @@ export default function Map() {
 
 
     return (
-        <div id="map" className="container main-background">
+        <div id="map" className="container flex main-background">
             <div className="map-content">
 
                 <div >
@@ -132,7 +132,7 @@ export default function Map() {
                 </div>
 
                 <p>
-                    Clique em sua cidade no mapa e se antene sobre a situação do covid em sua cidade!
+                   <b>Clique</b> em sua cidade no <b>mapa</b> e se antene sobre a situação do covid em sua cidade!
                 </p>
                 <h3>Mostrar mapa</h3>
 
@@ -140,9 +140,8 @@ export default function Map() {
                     <IoArrowDownCircleSharp></IoArrowDownCircleSharp>
                 </button>
 
-                <hr></hr>
                 <div className={`map-container ${showMap ? 'showMap' : ''}`}>
-                    <img className="map-img" src={ponte} alt="logo"/>
+                    <img src={ponte} alt="logo"/>
 
                     <button type="submit" id="biguacu-btn" onClick={()=> setCity("biguacu")}>Biguaçu</button>
                     <button type="submit" id="floripa-btn" onClick={()=> setCity("floripa")}>Florianopolis</button>

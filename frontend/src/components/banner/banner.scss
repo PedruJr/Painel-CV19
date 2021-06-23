@@ -33,21 +33,15 @@
 }
 
 @media (min-width: 750px) {
+    .banner-hero {
+        height: 30em;
+    }
+
     .banner-text {
-        top: 55%;
-        left: 45%;
-        max-width: 600px;
-    }
-
-    .banner-text p{
+        max-width: 500px;
+        font-size: 2em;
+        left: 2em;
+        top: 3em;
         position: absolute;
-    }
-
-    .banner-text h1 {
-        left: 7%;
-    }
-
-    .circular-container {
-    display: none;
     }
 }
