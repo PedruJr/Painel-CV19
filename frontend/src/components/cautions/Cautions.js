@@ -17,7 +17,7 @@ function RenderIconCaution(props) {
 
 export default function Cautions() {
     return (
-        <div id="cautions" className="cautions-container">
+        <div id="cautions" className="cautions-container main-background">
             <div className="cautions-content">
                 <h2>
                     Ainda estamos na luta contra o <b>Covid-19 </b>

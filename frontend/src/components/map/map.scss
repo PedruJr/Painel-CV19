@@ -47,7 +47,6 @@
     width: 0%;
     height: 0%;
     position: relative;
-    font-family: 'Livvic', sans-serif;
     overflow: hidden;
     transition: 0.5s;
 
@@ -93,7 +92,7 @@
 
 }
 
-#biguacu-btn:hover, #biguacu-btn:active {
+#biguacu-btn:hover, #biguacu-btn:focus {
     background-image: url("../../assets/biguacu0.png");
 }
 
@@ -105,7 +104,7 @@
 
 }
 
-#floripa-btn:hover, #floripa-btn:active {
+#floripa-btn:hover, #floripa-btn:focus {
     background-image: url("../../assets/floripa0.png");
 }
 
@@ -118,7 +117,7 @@
 
 }
 
-#palhoca-btn:hover, #palhoca-btn:active {
+#palhoca-btn:hover, #palhoca-btn:focus {
     background-image: url("../../assets/palhoca0.png");
 
 }
@@ -132,7 +131,7 @@
 
 }
 
-#saoJose-btn:hover, #saoJose-btn:active {
+#saoJose-btn:hover, #saoJose-btn:focus {
     background-image: url("../../assets/saojose0.png");
 }
 
@@ -164,6 +163,7 @@
 
 .rendercard-container h3{
     color: #0bacee;
+    text-align: left;
 }
 
 .cardValues-box{

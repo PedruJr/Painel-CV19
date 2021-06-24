@@ -1,10 +1,10 @@
 .cautions-container{
     text-align: center;
-    background-color: white;
 }
 
 .cautions-content{
-    padding:1em
+    padding:1em;
+    background: rgba(255,255,255, 0.8);
 }
 
 .cautions-content h2{
