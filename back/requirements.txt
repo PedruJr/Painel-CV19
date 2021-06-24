@@ -1,0 +1,7 @@
+django==3.1.6
+django_environ==0.4.5
+psycopg2-binary==2.8.4
+six==1.13.0
+djangorestframework==3.*
+django_extensions==3.*
+requests
