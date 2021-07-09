@@ -1,8 +1,12 @@
+NAMEIMAGE=ceotech
 PYTHON_VERSION := 3.8.5
-PROJECT_NAME := painel
+PROJECT_NAME := ceotech
 VENV_NAME := $(PROJECT_NAME)-$(PYTHON_VERSION)
 DATABASE_PASS := postgres
 
+run:
+	docker build -t ceotech .
+	docker run -d -p 8000:8000 --name app ceotech
 
 create-venv: .create-venv setup
 
@@ -20,5 +24,9 @@ setup: .pip
 	pip install -U setuptools
 	pip install -r requirements.txt
 
+# Postgres Local
 run-postgres:
-	docker start ceotech-postgres 2>/dev/null || docker run --name covid-postgres -p 5432:5432 -e POSTGRES_PASSWORD='$(DATABASE_PASS)' -d postgres:10-alpine
+	docker start ceotech-postgres 2>/dev/null || docker run --name ceotech-postgres -p 5432:5432 -e POSTGRES_PASSWORD='$(DATABASE_PASS)' -d postgres:10-alpine
+
+test:
+	pytest -v --cov-report=term-missing --cov-report=html --cov-report=xml --cov-fail-under=80
