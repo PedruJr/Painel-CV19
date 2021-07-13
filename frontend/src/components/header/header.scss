@@ -11,6 +11,10 @@ header {
 
 header p {
     padding-top: 0.3em;
+    margin-right: 2em;
+    transition: 0.5s;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .icon {
@@ -18,6 +22,7 @@ header p {
     font-size: 3em;
     color: white;
     transition: 0.5s;
+    cursor: pointer;
 }
 
 .icon:active, .icon:hover {
@@ -45,11 +50,6 @@ header p {
     line-height: 3em;
 }
 
-.links p {
-    margin-right: 2em;
-    transition: 0.5s;
-}
-
 .links p:active, .links p:hover {
     color: #0bacee;
     font-size: 1.1em;    
@@ -72,6 +72,29 @@ header p {
     border-bottom: 0px;
 }
 
+.btn-close-contact{
+    position: absolute;
+    top: 3em;
+    right: 2.3em;
+    width: 25px;
+    height: 25px;
+    background-color: #0bacee;
+    z-index: 999;
+    transition: 0.5s;
+}
+
+.btn-close-contact:hover, btn-close-contact:target {
+    border: 2px solid white;
+}
+
+.contact-hidden{
+    display: none;
+    transition: 0.5s;
+}
+
+.contact-show{
+    display: block;
+}
 
 @media (min-width: 750px) {
     .links {

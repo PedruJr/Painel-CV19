@@ -1,76 +1,64 @@
 import React, {useState, useEffect} from 'react'
 import './map.scss';
-import ponte from '../../assets/mapa0.png';
-import {FiMap} from "react-icons/fi";
-import {IoArrowBackCircle, IoArrowDownCircleSharp, IoSkull} from "react-icons/io5";
+import mapService from "./map-service";
+
+import {IoArrowBackCircle, IoArrowDownCircleSharp} from "react-icons/io5";
+import {FaSyringe} from "react-icons/all";
+
+import mapa from '../../assets/mapa0.png';
+import biguaVac from '../../assets/vacina-biguacu.png';
+import joseVac from '../../assets/vacina-saojose.png';
+import palhocaVac from '../../assets/vacina-palhoca.jpg';
+import floripaVac from '../../assets/vacina-floripa.jpeg';
 
 export default function Map() {
-    const fetch = require('node-fetch');
-    const token="c9d23b109021e3a78170b8d02e5014a21bb7a571";
-    const datasetSlug="covid19";
-    const tableName="caso_full";
-    const filters = {state: "SC", is_last: "True"};
-    const url=`https://api.brasil.io/v1/dataset/${datasetSlug}/${tableName}/data?state=${filters.state}&is_last=${filters.is_last}`;
-
-    const fetchData = [fetch,token,url];
 
     const [biguacu, setBiguacu] = useState('');
     const [palhoca, setPalhoca] = useState('');
     const [saoJose, setSaoJose] = useState('');
     const [floripa, setFloripa] = useState('');
     const [currentCity, setCurrentCity] = useState('');
-    const [show, setShow] = useState('infosCard-text');
+    const [currentVacinationCity, setVacinationCity] = useState('');
+    const [show, setShow] = useState('');
+    const [showVac, setShowVac] = useState('');
     const [showMap, setShowMap] = useState(false);
 
-    const data = {
-
-        biguacu,
-        palhoca,
-        saoJose,
-        floripa
-    };
-
-    useEffect(() => {
-        fetch(
-            url,
-            {
-                method: 'get',
-                headers: {
-                    Authorization: `Token ${token}`,
-                },
-            }
-        ).then(res => res.json())
-            .then(json => {
-                console.log(json);
-                setBiguacu(json.results[38]);
-                console.log(biguacu);
-                setFloripa(json.results[90]);
-                console.log(floripa);
-                setPalhoca(json.results[184]);
-                console.log(palhoca);
-                setSaoJose(json.results[251])
-                console.log(saoJose);
-            });
-    },fetchData)
+    useEffect(    () => {
+            mapService().then( data => {
+                setBiguacu(data.biguacu);
+                setPalhoca(data.palhoca);
+                setSaoJose(data.saoJose);
+                setFloripa(data.floripa);
+            })
+        }, []);
 
     function setCity(value){
-
         switch(value){
+            default:
+                setCurrentCity(biguacu);
+                setShow("infosCard-show");
+                setVacinationCity(biguaVac);
+                break;
+
             case "biguacu":
                 setCurrentCity(biguacu);
                 setShow("infosCard-show");
+                setVacinationCity(biguaVac);
                 break;
             case "floripa":
                 setCurrentCity(floripa);
                 setShow("infosCard-show");
+                setVacinationCity(floripaVac);
                 break;
             case "palhoca":
                 setCurrentCity(palhoca);
                 setShow("infosCard-show");
+                setVacinationCity(palhocaVac);
                 break;
             case "saoJose":
                 setCurrentCity(saoJose);
                 setShow("infosCard-show");
+                setVacinationCity(joseVac);
                 break;
         }
 
@@ -91,7 +79,6 @@ export default function Map() {
             <div>
                 <span>{props.title}</span>
                 <h3>
-                    <IoSkull size={35} style={{color: 'black'}}></IoSkull>
                     %{props.value}
                 </h3>
             </div>
@@ -102,18 +89,40 @@ export default function Map() {
         return(
             <div className="rendercard-container">
                 <h3>{props.city}</h3>
+
                 <div className="rendercard-row1">
                     <CardValues title="Casos confirmados" info={currentCity.last_available_confirmed}></CardValues>
                     <CardValues title="Casos recentes" info={currentCity.new_confirmed}></CardValues>
                     <CardValues title="Mortes confirmadas" info={currentCity.last_available_deaths}></CardValues>
                 </div>
-                
+
                 <div className="rendercard-row2" >
-                    <CardPercentages title="Taxa de mortalidade" value={currentCity.last_available_deaths}></CardPercentages>
+                    <CardPercentages title="Taxa de mortalidade" value={currentCity.last_available_death_rate}></CardPercentages>
                 </div>
 
-                <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}><IoArrowBackCircle ></IoArrowBackCircle></button>
+                <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}>
+                    <IoArrowBackCircle ></IoArrowBackCircle>
+                </button>
 
+                <div className="vacination-position flex-column">
+                    <span>Vacinação</span>
+                    <button id="show-vacination-dates-btn" onClick={() => setShowVac("infosVacCard-show")}>
+                        <FaSyringe></FaSyringe>
+                    </button>
+                </div>
+
+                <label className="warning-label"> Informações retiradas da secretaria de saude do respectivo municipio.</label>
+            </div>
+        )
+    }
+
+    function RenderVacCard() {
+        return (
+            <div>
+                    <img alt="vacination-banner" src={currentVacinationCity}/>
+                    <button id="hide-vacination-dates-btn" onClick={() => setShowVac("")}>
+                        <IoArrowBackCircle></IoArrowBackCircle>
+                    </button>
             </div>
         )
     }
@@ -125,9 +134,7 @@ export default function Map() {
 
                 <div >
                     <h1>
-                        <FiMap style={{marginRight:'0.3em'}}/>
                         Mapa Informativo
-                        <FiMap style={{marginLeft:'0.3em'}}/>
                     </h1>
                 </div>
 
@@ -141,7 +148,7 @@ export default function Map() {
                 </button>
 
                 <div className={`map-container ${showMap ? 'showMap' : ''}`}>
-                    <img src={ponte} alt="logo"/>
+                    <img src={mapa} alt="logo"/>
 
                     <button type="submit" id="biguacu-btn" onClick={()=> setCity("biguacu")}>Biguaçu</button>
                     <button type="submit" id="floripa-btn" onClick={()=> setCity("floripa")}>Florianopolis</button>
@@ -152,31 +159,12 @@ export default function Map() {
                         <RenderCard city={currentCity.city}></RenderCard>
                     </div>
 
+                    <div className={`infosVacCard ${showVac}`}>
+                        <RenderVacCard></RenderVacCard>
+                    </div>
+
                 </div>
             </div>
         </div>
     )
 }
-
-/*
-
-<h2>{currentCity.city}</h2>
-
-
-                        <h3>Data</h3>
-                        <p>{currentCity.date}</p>
-                        <h3>População estimada:</h3>
-                        <p>{currentCity.estimated_population}</p>
-                        <h3>Casos confirmados:</h3>
-                        <p>{currentCity.last_available_confirmed}</p>
-                        <h3>Taxa de mortalidade:</h3>
-                        <p>{currentCity.last_available_death_rate}</p>
-                        <h3>Ultimas mortes:</h3>
-                        <p>{currentCity.last_available_deaths}</p>
-                        <h3>Novos confirmados:</h3>
-                        <p>{currentCity.new_confirmed}</p>
-                        <h3>Novas mortes:</h3>
-                        <p>{currentCity.new_deaths}</p>
-                        <button type="submit" id="hidePainel-btn" onClick={()=> setShow(" ")}></button>
-                    
- */

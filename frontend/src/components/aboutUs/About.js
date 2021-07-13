@@ -6,11 +6,10 @@ function RenderAboutCard(props) {
 
     return(
         <div className="card-container">
+            <h2>
+                {props.title}
+            </h2>
             <p>
-                <h2>
-                  {props.title}
-                </h2>
-                
                 {props.text}
             </p>
         </div>

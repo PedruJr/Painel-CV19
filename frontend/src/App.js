@@ -10,7 +10,7 @@ import AboutUs from './components/aboutUs/About.js';
 
 function App() {
   return (
-    <div className="main-container">
+    <div className="main-container main-background">
       <Banner></Banner>
       <Map></Map>
       <Cautions></Cautions>

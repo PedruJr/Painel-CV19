@@ -1,15 +1,29 @@
 import React,{useState} from 'react';
 import './header.scss';
 import {FiMenu} from 'react-icons/fi';
+import Contact from "../contact/Contact";
 
 export default function Header() {
     const [navbarOn, setNavbarOn] = useState(false);
-    
+    const [contactOn, setContactOn] = useState(false);
+
     function toggleNavbar() {
         setNavbarOn(!navbarOn)
     }
+
+    function toggleContact() {
+        setContactOn(!contactOn)
+    }
+
     return (
-        <div>
+        <div className="main-container">
+
+            <div className={`contact-hidden ${contactOn ? "contact-show" : ""}`}>
+                <Contact></Contact>
+                <button onClick={toggleContact} className="btn-close-contact"> X </button>
+            </div>
+
+
             <header>
                 <FiMenu onClick={toggleNavbar} className="icon" />
 
@@ -17,14 +31,17 @@ export default function Header() {
                     <p onClick={() => window.location.replace("/#map")} >Mapa</p>
                     <p onClick={() => window.location.replace("/#cautions")} >Cuidados</p>
                     <p onClick={() => window.location.replace("/#aboutus")}> Sobre o portal</p>
-                    <p onClick={() => window.location.replace("/#vacines")} >Datas vacinas</p>
-                    <p onClick={() => window.location.replace("/#contactus")} >Contato</p>
+                    <p onClick={toggleContact}>Contato</p>
                 </div>
 
                 <div className={`navMenu ${navbarOn ? "navMenu-show" : ""}`}>
-                    <button className="btn-menu">Index</button>
-                    <button className="btn-menu">Gerar Relatório</button>
+                    <button onClick={() => {window.location.replace("/#map"); toggleNavbar()}} className="btn-menu">Mapa</button>
+                    <button onClick={() => {window.location.replace("/#cautions"); toggleNavbar()}} className="btn-menu">Cuidados</button>
+                    <button onClick={() => {window.location.replace("/#aboutus"); toggleNavbar()}} className="btn-menu">Sobre o portal</button>
+                    <button onClick={() => {toggleContact(); toggleNavbar()}} className="btn-menu">Contato</button>
                 </div>
+
+
 
             </header>
         </div>

@@ -13,15 +13,17 @@
     color: white;
 
     margin: 2em 0;
-    padding: 3em 2em;
+    padding: 3em 0em;
 
 }
 
 .about-text{
     max-width: 0px;
     max-height: 0px;
+    margin-top: 1em;
     display: flex;
     flex-direction: column;
+    align-items: center;
     
     transition: 0.5s;
     overflow: hidden;
@@ -62,6 +64,21 @@
     width: 320px;
 }
 
+.card-container h2 {
+    margin-top: 1em;
+    margin-bottom: -0.6em;
+}
+
 .about-btn {
     background: white;
+}
+
+@media (min-width: 750px) {
+
+    .about-text{
+        flex-direction: row;
+        justify-content: space-between;
+        margin:1em 2em;
+    }
+
 }
