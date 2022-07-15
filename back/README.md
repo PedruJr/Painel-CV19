@@ -1,5 +1,3 @@
-# ceotech
-
 ### Prerequisites
 - python3
 - pip3
